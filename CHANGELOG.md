@@ -1,3 +1,10 @@
+## 0.0.25
+
+* Bumped native Android SDK dependency from `v0.13.0` to `v0.13.1` (JitPack `com.github.the-momentum.open_wearables_android_sdk:sdk:v0.13.1`).
+  - A partial Health Connect or Samsung Health grant is enough. Sync uploads the granted types, and Start Sync appears after that screen.
+  - Samsung `activeEnergy` is active calories, not distance reported as kcal.
+  - Samsung steps and active calories re-read the last 48 hours, aligned to the hour, so a late watch batch can replace that hour.
+
 ## 0.0.24
 
 * Bumped native Android SDK dependency from `v0.12.0` to `v0.13.0` (JitPack `com.github.the-momentum.open_wearables_android_sdk:sdk:v0.13.0`).
