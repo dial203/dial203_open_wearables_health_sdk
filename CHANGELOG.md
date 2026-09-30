@@ -1,3 +1,7 @@
+## Unreleased
+
+* iOS Swift Package Manager support (#52). CocoaPods still works. The native iOS SDK stays on `~> 0.15.0`.
+
 ## 0.0.25
 
 * Bumped native Android SDK dependency from `v0.13.0` to `v0.13.1` (JitPack `com.github.the-momentum.open_wearables_android_sdk:sdk:v0.13.1`).

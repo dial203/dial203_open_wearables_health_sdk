@@ -10,16 +10,18 @@ let package = Package(
         .library(name: "open-wearables-health-sdk", targets: ["open_wearables_health_sdk"]),
     ],
     dependencies: [
+        .package(name: "FlutterFramework", path: "../FlutterFramework"),
         .package(
             url: "https://github.com/the-momentum/open_wearables_ios_sdk.git",
-            from: "0.14.0"
-        )
+            "0.15.0"..<"0.16.0"
+        ),
     ],
     targets: [
         .target(
             name: "open_wearables_health_sdk",
             dependencies: [
-                .product(name: "OpenWearablesHealthSDK", package: "open_wearables_ios_sdk")
+                .product(name: "FlutterFramework", package: "FlutterFramework"),
+                .product(name: "OpenWearablesHealthSDK", package: "open_wearables_ios_sdk"),
             ],
             resources: [.process("Resources")],
         ),
