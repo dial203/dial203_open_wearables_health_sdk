@@ -10,6 +10,7 @@ enum HealthDataType {
   walkingAsymmetryPercentage,
   walkingDoubleSupportPercentage,
   sixMinuteWalkTestDistance,
+  appleExerciseTime,
 
   // Energy
   activeEnergy,
@@ -20,6 +21,9 @@ enum HealthDataType {
   heartRate,
   restingHeartRate,
   heartRateVariabilitySDNN,
+  heartRateVariabilityRMSSD, // iOS 27+
+  walkingHeartRateAverage,
+  heartRateRecoveryOneMinute, // iOS 16+
   vo2Max,
   oxygenSaturation,
   bloodOxygen, // alias of oxygenSaturation on iOS
@@ -34,6 +38,7 @@ enum HealthDataType {
   leanBodyMass,
   waistCircumference, // iOS 16+
   bodyTemperature,
+  appleSleepingWristTemperature, // iOS 16+
 
   // Glucose / insulin
   bloodGlucose,
@@ -52,6 +57,7 @@ enum HealthDataType {
   // Sleep / mindfulness
   sleep,
   mindfulSession,
+  appleSleepingBreathingDisturbances, // iOS 18+
 
   // Reproductive
   menstrualFlow,
@@ -74,6 +80,7 @@ enum HealthDataType {
   workout,
   workoutEffortScore, // iOS 18+
   estimatedWorkoutEffortScore, // iOS 18+
+  physicalEffort, // iOS 17+
 }
 
 extension HealthDataTypeId on HealthDataType {
@@ -98,6 +105,8 @@ extension HealthDataTypeId on HealthDataType {
         return 'walkingDoubleSupportPercentage';
       case HealthDataType.sixMinuteWalkTestDistance:
         return 'sixMinuteWalkTestDistance';
+      case HealthDataType.appleExerciseTime:
+        return 'appleExerciseTime';
 
       // Energy
       case HealthDataType.activeEnergy:
@@ -114,6 +123,12 @@ extension HealthDataTypeId on HealthDataType {
         return 'restingHeartRate';
       case HealthDataType.heartRateVariabilitySDNN:
         return 'heartRateVariabilitySDNN';
+      case HealthDataType.heartRateVariabilityRMSSD:
+        return 'heartRateVariabilityRMSSD';
+      case HealthDataType.walkingHeartRateAverage:
+        return 'walkingHeartRateAverage';
+      case HealthDataType.heartRateRecoveryOneMinute:
+        return 'heartRateRecoveryOneMinute';
       case HealthDataType.vo2Max:
         return 'vo2Max';
       case HealthDataType.oxygenSaturation:
@@ -140,6 +155,8 @@ extension HealthDataTypeId on HealthDataType {
         return 'waistCircumference';
       case HealthDataType.bodyTemperature:
         return 'bodyTemperature';
+      case HealthDataType.appleSleepingWristTemperature:
+        return 'appleSleepingWristTemperature';
 
       // Glucose / insulin
       case HealthDataType.bloodGlucose:
@@ -172,6 +189,8 @@ extension HealthDataTypeId on HealthDataType {
         return 'sleep';
       case HealthDataType.mindfulSession:
         return 'mindfulSession';
+      case HealthDataType.appleSleepingBreathingDisturbances:
+        return 'appleSleepingBreathingDisturbances';
 
       // Reproductive
       case HealthDataType.menstrualFlow:
@@ -208,6 +227,8 @@ extension HealthDataTypeId on HealthDataType {
         return 'workoutEffortScore';
       case HealthDataType.estimatedWorkoutEffortScore:
         return 'estimatedWorkoutEffortScore';
+      case HealthDataType.physicalEffort:
+        return 'physicalEffort';
     }
   }
 }
