@@ -49,6 +49,12 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  # Build the plugin through CocoaPods. With SPM, Flutter names the plugin's
+  # package after the checkout directory, and a fork cloned as
+  # dial203_open_wearables_health_sdk fails Xcode's package identity check.
+  # The Podfile pins the iOS SDK fork for CocoaPods builds.
+  config:
+    enable-swift-package-manager: false
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
